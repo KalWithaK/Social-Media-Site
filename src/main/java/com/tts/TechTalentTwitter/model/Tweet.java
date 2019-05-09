@@ -24,7 +24,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @SpringBootApplication
 
@@ -51,6 +53,8 @@ public class Tweet {
     
         
     @CreationTimestamp
+    @Getter
+   @Setter
     private Date createdAt;
     
     @ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE })
